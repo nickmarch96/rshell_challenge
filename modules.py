@@ -2,7 +2,7 @@
 
 
 always_bad = "#%&/+,:<=>?@[~]\\^`\t\n\r\x0b\x0c"
-always_bad_seq = ["bash", "man", "less", "pinfo", "lynx", "export", "nmap"]
+always_bad_seq = ["bash", "man", "less", "pinfo", "lynx", "export", "nmap", "ruby", "perl"]
 
 leftover = "!\"$\'()*-._{|}"
 
@@ -68,21 +68,21 @@ def check_chal2(x):
 
 def check_chal3(x):
 	bad_chars = '!\"$\'()*-._{|};'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "nano", "find", "ruby", "perl"]
+	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "nano", "find"]
 
 	return _generic_check(x, bad_chars, bad_seq)
 
 
 def check_chal4(x):
 	bad_chars = '!\"$\'()*-._{|};'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "ruby", "perl"]
+	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find"]
 
 	return _generic_check(x, bad_chars, bad_seq)
 
 
 def check_chal5(x):
 	bad_chars = '!\"$\'()*-._{|};'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "ruby", "perl", "nano"]
+	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "nano"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
 
@@ -95,14 +95,14 @@ def check_chal5(x):
 
 def check_chal6(x):
 	bad_chars = '!\"$\'()*-._{|};'
-	bad_seq = ["sh", "rm", "vim", "emacs", "joe", "py", "find", "ruby", "perl", "nano", "tee"]
+	bad_seq = ["sh", "rm", "vim", "emacs", "joe", "py", "find", "nano", "tee"]
 
 	return _generic_check(x, bad_chars, bad_seq)
 
 
 def check_chal7(x):
 	bad_chars = '!\"$\'()-._{|};'
-	bad_seq = ["sh", "rm", "emacs", "joe", "py", "find", "ruby", "perl", "nano", "tee"]
+	bad_seq = ["sh", "rm", "emacs", "joe", "py", "find", "nano", "tee"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
 
@@ -119,7 +119,7 @@ def check_chal7(x):
 
 def check_chal8(x):
 	bad_chars = '!$_.{|}'
-	bad_seq = ["sh", "rm", "emacs", "vi", "joe", "find", "ruby", "perl", "nano", "tee", "os", "sys", "open"]
+	bad_seq = ["sh", "rm", "emacs", "vi", "joe", "find", "nano", "tee", "os", "sys", "open"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
 
