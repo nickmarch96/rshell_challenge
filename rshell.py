@@ -36,12 +36,6 @@ def check_chal1(x):
 
 	return True
 
-"""
-sh
-bash
-"""
-
-
 
 def check_chal2(x):
 	bad_chars = '!"#%&\'()*+,/:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
@@ -66,36 +60,8 @@ def check_chal2(x):
 
 	return True
 
-"""
-exec $SHELL
-"""
 
 def check_chal3(x):
-	bad_chars = '!"#%&\'*+,./-:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "ruby", "perl"]
-
-	if not x:
-		return False
-
-	for char in bad_chars:
-		if char in x:
-			print("The character '{}' is not allowed!".format(char))
-			return False
-
-	for seq in bad_seq:
-		if seq in x:
-			print("You are not allowed to have an input with '{}' in it.".format(seq))
-			return False
-
-	return True
-
-"""
-nano cmd
-w: nc -nvlp 8080 -e /bin/bash
-$(cat cmd)
-"""
-
-def check_chal4(x):
 	bad_chars = '!"#%&\'*+,/()-:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
 	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "nano", "find", "ruby", "perl"]
 
@@ -114,11 +80,28 @@ def check_chal4(x):
 
 	return True
 
-"""
-python
-import os
-os.system()
-"""
+
+
+def check_chal4(x):
+	bad_chars = '!"#%&\'*+,./-:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
+	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "ruby", "perl"]
+
+	if not x:
+		return False
+
+	for char in bad_chars:
+		if char in x:
+			print("The character '{}' is not allowed!".format(char))
+			return False
+
+	for seq in bad_seq:
+		if seq in x:
+			print("You are not allowed to have an input with '{}' in it.".format(seq))
+			return False
+
+	return True
+
+
 
 diff = [1, 2, 3, 4]
 
