@@ -2,7 +2,7 @@
 
 
 always_bad = "#%&/+,:<=>?@[~]\\^`\t\n\r\x0b\x0c"
-always_bad_seq = ["bash", "man", "less", "pinfo", "lynx", "export", "nmap", "ruby", "perl"]
+always_bad_seq = ["bash", "man", "less", "pinfo", "lynx", "export", "nmap", "ruby", "perl", "rnano"]
 
 leftover = "!\"$\'()*-._{|}"
 
@@ -22,6 +22,9 @@ def global_check(x):
 		if seq in temp:
 			print("[RSHELL]: Restricted Command :::{}:::".format(seq))
 			return False
+
+	if "nano" in x:
+		x = x.replace("nano", "rnano")
 
 	return True
 
@@ -55,9 +58,17 @@ def check_chal1(x):
 
 def check_chal2(x):
 	bad_chars = '!*|;'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "find", "py"]
+	bad_seq = ["rm", "vi", "vim", "emacs", "joe", "find", "py"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
+
+	if x:
+		if "sh" in x:
+			print("[RSHELL]: Restricted Command :::sh:::")
+			return None
+
+		if "nano" in x:
+			x = x.replace("nano", "rnano")
 
 	if x and x[0] == "$":
 		print("[RSHELL]: Restricted Character :::$:::")
