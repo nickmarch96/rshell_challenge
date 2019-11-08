@@ -4,6 +4,7 @@ import signal
 from socket import gethostname
 from getpass import getuser
 import sys
+import modules
 
 
 def sig_handler(signum, frame):
@@ -17,93 +18,7 @@ for sig in catchable_sigs:
 
 
 
-def check_chal1(x):
-	bad_chars = '!#%&\'()*+,-/:;<=>?@[\\]^_`{\'}~\t\n\r\x0b\x0c'
-	bad_seq = ["bash", "python"]
-
-	if not x:
-		return False
-
-	for char in bad_chars:
-		if char in x:
-			print("The character '{}' is not allowed!".format(char))
-			return False
-
-	for seq in bad_seq:
-		if seq in x:
-			print("You are not allowed to have an input with '{}' in it.".format(seq))
-			return False
-
-	return True
-
-
-def check_chal2(x):
-	bad_chars = '!"#%&\'()*+,/:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "find", "py"]
-
-	if not x:
-		return False
-
-	for char in bad_chars:
-		if char in x:
-			print("The character '{}' is not allowed!".format(char))
-			return False
-
-	for seq in bad_seq:
-		if seq in x:
-			print("You are not allowed to have an input with '{}' in it.".format(seq))
-			return False
-
-	if x[0] == "$":
-		print("You are not allowed to have an input with '$' in it.")
-		return False
-
-	return True
-
-
-def check_chal3(x):
-	bad_chars = '!"#%&\'*+,/()-:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "nano", "find", "ruby", "perl"]
-
-	if not x:
-		return False
-
-	for char in bad_chars:
-		if char in x:
-			print("The character '{}' is not allowed!".format(char))
-			return False
-
-	for seq in bad_seq:
-		if seq in x:
-			print("You are not allowed to have an input with '{}' in it.".format(seq))
-			return False
-
-	return True
-
-
-
-def check_chal4(x):
-	bad_chars = '!"#%&\'*+,./-:;<=>?@[\\]^_`{|}~\t\n\r\x0b\x0c'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "ruby", "perl"]
-
-	if not x:
-		return False
-
-	for char in bad_chars:
-		if char in x:
-			print("The character '{}' is not allowed!".format(char))
-			return False
-
-	for seq in bad_seq:
-		if seq in x:
-			print("You are not allowed to have an input with '{}' in it.".format(seq))
-			return False
-
-	return True
-
-
-
-diff = [1, 2, 3, 4]
+diff = [1, 2, 3, 4, 5, 6, 7, 8]
 
 
 def main():
@@ -122,7 +37,7 @@ def main():
 		print("Difficulty must be a number from {} to {}".format(diff[0], diff[-1]))
 		exit()
 
-	check = eval("check_chal" + str(d))
+	check = eval("modules.check_chal" + str(d))
 
 	print("Welcome to my secure shell!\nYour difficulty is set to {}.\nAll requests will be filtered by {}".format(d, "check_chal{}()".format(d)))
 	print("Your only goal is to get a bash shell.")
@@ -133,11 +48,17 @@ def main():
 	hname = gethostname()
 
 	while True:
-		x = input("{}@{}: ".format(uname, hname)).strip()
+		x = input("[RSHELL]:{}@{}: ".format(uname, hname)).strip()
 		if x == "exit":
 			exit()
-		if not check(x.lower()):
+
+		if not modules.global_check(x):
 			continue
+
+		x = check(x)
+		if not x:
+			continue
+
 		os.system(x)
 
 
