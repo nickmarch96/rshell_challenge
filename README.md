@@ -24,6 +24,6 @@ There is a story connected to this rshell. A story about a lonely security engin
 
 6. After many tears and popped shells, our security engineer is on his last leg. "`Bash` is gone" he said. No more scripting. No more languages. No more `variables`. It has to be secure now.
 
-7. Oh man! That last exploit is as old as bash! Infact, some may even call it a `feature` of the program before its improved brother can to light. After a quick blacklist, we are back in business. Our engineer feels hopeful that with enough trial and error he can do this.
+7. Oh man! That last exploit is as old as bash! Infact, some may even call it a `feature` of the program before its improved brother came to light. After a quick blacklist, we are back in business. Our engineer feels hopeful that with enough trial and error he can do this.
 
 8. Our engineer stares at his computer screen. "I am going to restrict everything. Can't escape what doesnt work right?"
