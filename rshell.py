@@ -18,7 +18,7 @@ for sig in catchable_sigs:
 
 
 
-diff = [1, 2, 3, 4, 5, 6, 7, 9]
+diff = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 def main():
@@ -42,6 +42,11 @@ def main():
 	print("Welcome to my secure shell!\nYour difficulty is set to {}.\nAll requests will be filtered by {}".format(d, "check_chal{}()".format(d)))
 	print("Your only goal is to get a bash shell.")
 
+	if d == 8:
+		print("="*80)
+		print("Warning! Challenge number 8 requires 2 restricted shells to complete.")
+		print("Please use 2 instances of './rshell.py 8' to complete. \nDo NOT use an easier difficulty or normal bash as the second shell.")
+		print("="*80)
 
 	cwd = "/"
 	uname = getuser()
