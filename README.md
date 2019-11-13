@@ -18,7 +18,7 @@ There is a story connected to this rshell. A story about a lonely security engin
 
 3. His third attempt is one of frustration. Who would have thought his own `enviornment` would be his undoing! He restricted even more symbols to the point where its questionable to even call this a shell.
 
-4. Unfortunately it seems each attempt is riddled with flaws. Poor security engineer cant seem to outsmart the hackers. After pooring through logs he discovered what caused the previous breach. He decided he has had enough with that `language` all together.
+4. Unfortunately it seems each attempt is riddled with flaws. Poor security engineer cant seem to outsmart the hackers. After pooring through logs he discovered what caused the previous breach. He decided he has had enough with that `interpreter` all together.
 
 5. So much obscurity in the linux kernel. `Scripting` can be so dangerous sometimes. However, our engineer is now confident that there is no way to pull off the previous exploit.
 
@@ -26,4 +26,6 @@ There is a story connected to this rshell. A story about a lonely security engin
 
 7. Oh man! That last exploit is as old as bash! Infact, some may even call it a `feature` of the program before its improved brother came to light. After a quick blacklist, we are back in business. Our engineer feels hopeful that with enough trial and error he can do this.
 
-8. Our engineer stares at his computer screen. "I am going to restrict everything. Can't escape what doesnt work right?"
+8. Our engineer stares at his computer screen. "I am going to restrict everything. Can't escape what doesnt work right?". Lets hope `interprocess communication` doesn't come back to bite him.
+
+9. The engineer smugly sits his coffee. `Goodluck`...
