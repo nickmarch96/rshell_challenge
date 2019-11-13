@@ -247,7 +247,7 @@ def check_chal8(x):
 
 
 def check_chal9(x):
-	bad_chars = '!${|}'
+	bad_chars = '!${|}.'
 	bad_seq = ["sh", "rm", "emacs", "vi", "echo", "joe", "find", "nano", "tee", "os", "sys", "open", "exe", "nc"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
