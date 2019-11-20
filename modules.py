@@ -2,7 +2,7 @@
 
 
 always_bad = "#%&/+,:<=>?@[~]\\^`\t\n\r\x0b\x0c"
-always_bad_seq = ["bash", "man", "less", "pinfo","screen", "lynx", "gdb", "module", "export", "tmux", "nmap", "ruby", "perl", "rnano", "ftp", "php", "sql", "maria"]
+always_bad_seq = ["bash", "man", "less", "pinfo","screen", "lynx", "gdb", "module", "export", "tmux", "nmap", "ruby", "perl", "rnano", "ftp", "php", "sql", "maria", "su"]
 
 leftover = "!\"$\'()*-._{|}"
 
@@ -97,7 +97,7 @@ def check_chal3(x):
 
 def check_chal4(x):
 	bad_chars = '!\"\'*-{|};'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find"]
+	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "mo"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
 
@@ -133,7 +133,7 @@ def check_chal4(x):
 
 def check_chal5(x):
 	bad_chars = '\"\'*{!};'
-	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "nano", "nc"]
+	bad_seq = ["sh", "rm", "vi", "vim", "emacs", "joe", "py", "find", "nano", "nc", "mo"]
 
 	x = _generic_check(x, bad_chars, bad_seq)
 
@@ -169,7 +169,7 @@ def check_chal5(x):
 
 def check_chal6(x):
 	bad_chars = '!\"$\'()*-{|};'
-	bad_seq = ["sh", "rm", "vim", "emacs", "joe", "py", "find", "nano", "tee", "nc", "echo"]
+	bad_seq = ["sh", "rm", "vim", "emacs", "joe", "py", "find", "nano", "tee", "nc", "echo", "mo"]
 
 	return _generic_check(x, bad_chars, bad_seq)
 
