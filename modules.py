@@ -2,7 +2,7 @@
 
 
 always_bad = "#%&/+,:<=>?@[~]\\^`\t\n\r\x0b\x0c"
-always_bad_seq = ["bash", "man", "less", "pinfo","screen", "lynx", "gdb", "module", "export", "tmux", "nmap", "ruby", "perl", "rnano", "ftp", "php", "sql", "maria", "su"]
+always_bad_seq = ["bash", "man", "less", "pinfo","screen", "lynx", "gdb", "git", "ed", "except", "script", "module", "export", "tmux", "nmap", "ruby", "perl", "rnano", "ftp", "php", "sql", "maria", "su"]
 
 leftover = "!\"$\'()*-._{|}"
 
